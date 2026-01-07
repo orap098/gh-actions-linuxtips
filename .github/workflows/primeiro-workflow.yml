@@ -10,9 +10,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Verificar SO
-              run: cat /etc/so-release
+              run: cat /etc/os-release
 
             - name: exibir mensagem
               run: echo 'CONCLUIDO'
-              
+
         
