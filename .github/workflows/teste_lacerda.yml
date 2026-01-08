@@ -2,7 +2,7 @@ name: Teste Lacerda
 
 on:
     push:
-        branche:
+        branches:
             - main
 
 jobs:
@@ -10,8 +10,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: vERIFICAR SO
-               run: cat /etc/os-release
+              run: cat /etc/os-release
 
             - name: Mostrar que deu certo
-               run: echo 'DEU CERTO'
+              run: echo 'DEU CERTO'
 
