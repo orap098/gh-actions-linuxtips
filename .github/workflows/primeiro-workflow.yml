@@ -3,7 +3,7 @@ name: Desafio 1
 on:
   workflow_dispatch:
    inputs:
-      name:
+      imagem_docker:
         type: string
 
 jobs:
@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Docker pull
-        run: docker pull ${{ github.event.inputs.message }}
+        run: docker pull ${{ github.event.inputs.imagem_docker }}
 
-      - name: Lista Imagens dokcer
+      - name: Lista Imagens docker
         run: docker images
 
       - name: Relatório de Vulnerabilidade da imagem
