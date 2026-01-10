@@ -8,20 +8,20 @@ on:
 
 jobs:
   Vulnerabilidade Docker:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Docker pull
-      run: docker pull ${{ github.event.inputs.message }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker pull
+        run: docker pull ${{ github.event.inputs.message }}
 
-    - name: Lista Imagens dokcer
-      run: docker images
+      - name: Lista Imagens dokcer
+        run: docker images
 
-    - name: Relatório de Vulnerabilidade da imagem
-      uses: docker/scout-action@v1
-      with:
-        command: cves
-        image: $${{ github.event.inputs.message }}
+      - name: Relatório de Vulnerabilidade da imagem
+        uses: docker/scout-action@v1
+        with:
+          command: cves
+          image: $${{ github.event.inputs.message }}
     
-    - name: Finalizado
-      run: echo 'FINALIZADO'
+      - name: Finalizado
+        run: echo 'FINALIZADO'
 
