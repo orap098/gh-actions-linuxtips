@@ -2,8 +2,9 @@ name: Desafio 1
 
 on:
   workflow_dispatch:
-  name: Escolha uma imagem do docker
-  input:
+   inputs:
+      name:
+        type: string
 
 runs-on: ubuntu-latest
 
