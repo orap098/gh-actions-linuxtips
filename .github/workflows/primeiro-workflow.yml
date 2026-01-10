@@ -7,7 +7,7 @@ on:
         type: string
 
 jobs:
-  Vulnerabilidade Docker:
+  Vulnerabilidade_Docker:
     runs-on: ubuntu-latest
     steps:
       - name: Docker pull
