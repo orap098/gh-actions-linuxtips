@@ -1,19 +1,28 @@
-name: primeiro_worklow
+name: Desafio 1
 
 on:
-  workflow_dispatch
-#    push:
-#        branches:
-#            - main
+  workflow_dispatch:
+  name: Escolha uma imagem do docker
+  input:
 
-jobs:
-    giropops:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Verificar SO
-              run: cat /etc/os-release
+runs-on: ubuntu-latest
 
-            - name: exibir mensagem
-              run: echo 'CONCLUIDO'
+job:
+  Vulnerabilidade Docker:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Docker pull
+      run: docker pull ${{ github.event.inputs.message }}
 
-        
+    - name: Lista Imagens dokcer
+      run: docker images
+
+    - name: Relatório de Vulnerabilidade da imagem
+      uses: docker/scout-action@v1
+      with:
+        command: cves
+        image: $${{ github.event.inputs.message }}
+    
+    - name: Finalizado
+      run: echo 'FINALIZADO'
+
