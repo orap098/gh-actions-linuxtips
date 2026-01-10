@@ -17,11 +17,14 @@ jobs:
         run: docker images
 
       - name: Relatório de Vulnerabilidade da imagem
+        id: docker-scout
         uses: docker/scout-action@v1
         with:
-          command: cves
-          image: $${{ github.event.inputs.message }}
-    
+          command: cves,recommendations,compare
+          to-latest: true
+          ignore-base: true
+          ignore-unchanged: true
+          only-fixed: true
       - name: Finalizado
         run: echo 'FINALIZADO'
 
