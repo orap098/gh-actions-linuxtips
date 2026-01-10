@@ -6,7 +6,7 @@ on:
       name:
         type: string
 
-job:
+jobs:
   Vulnerabilidade Docker:
   runs-on: ubuntu-latest
   steps:
