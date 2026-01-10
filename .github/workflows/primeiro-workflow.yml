@@ -22,7 +22,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-
       - name: Relatório de Vulnerabilidade da imagem
         id: docker-scout
         uses: docker/scout-action@v1
@@ -32,6 +31,7 @@ jobs:
           ignore-base: true
           ignore-unchanged: true
           only-fixed: true
+
       - name: Finalizado
         run: echo 'FINALIZADO'
 
