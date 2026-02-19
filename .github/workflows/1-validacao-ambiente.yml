@@ -12,10 +12,10 @@ jobs:
 
       - name: Deploy PRD
         if: github.ref_name == 'main'
-        run: Echo 'Deploy realizado em PRD'
+        run: echo 'Deploy realizado em PRD'
 
       - name: Deploy QA
         if: github.ref_name == 'develop'
-        run: Echo 'Deploy realizado em QA'
+        run: echo 'Deploy realizado em QA'
 
 
