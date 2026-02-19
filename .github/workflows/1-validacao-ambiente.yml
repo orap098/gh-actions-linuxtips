@@ -1,0 +1,21 @@
+name: Validação de Ambiente
+
+on:
+  workflow_dispatch:
+
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validação de Branch
+        run: echo 'Branch ${{ github.ref_name }}'
+
+      - name: Deploy PRD
+        if: github.ref_name == 'main'
+        run: Echo 'Deploy realizado em PRD'
+
+      - name: Deploy QA
+        if: github.ref_name == 'develop'
+        run: Echo 'Deploy realizado em QA'
+
+

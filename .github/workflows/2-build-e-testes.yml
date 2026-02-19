@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  workflow_call:
+    inputs:
+      success:
+        required: true
+        type: string
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+              with:
+                path: main
+            
+            - name: Build
+              run: echo 'Build concluido'
+
+
+                
