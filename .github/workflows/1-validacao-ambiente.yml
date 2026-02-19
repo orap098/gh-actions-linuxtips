@@ -18,4 +18,13 @@ jobs:
         if: github.ref_name == 'develop'
         run: echo 'Deploy realizado em QA'
 
+  build:
+      uses: ./.github/workflows/build.yml
+      with:
+        success: "true"
 
+  avisa:
+      runs-on: ubuntu-latest
+      needs: [build]
+      steps:
+        - run: echo "O Workflow Compartilhado 'Build' terminou de ser executado"
