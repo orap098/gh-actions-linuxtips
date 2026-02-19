@@ -19,7 +19,7 @@ jobs:
         run: echo 'Deploy realizado em QA'
 
   build:
-      uses: ./.github/workflows/build.yml
+      uses: ./.github/workflows/2-build-e-testes.yml
       with:
         success: "true"
 
